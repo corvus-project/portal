@@ -1,0 +1,1 @@
+const e={X:"bg-red-500",P:"bg-amber-500 ",A:"bg-green-500"},A={P:"Pending",A:"Active",X:"Canceled"},T={Inactive:"bg-red-500",Active:"bg-green-500"},S={Inactive:"Pending",Active:"Active"};export{T as C,e as P,S as a,A as b};

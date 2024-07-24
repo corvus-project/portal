@@ -123,6 +123,7 @@ export default function Index({ auth, users, customers, queryParams = null, succ
                                             </TableHeading>
 
                                             <th className="px-3 py-3">Roles</th>
+                                            <th className="px-3 py-3"></th>
 
                                         </tr>
                                     </thead>

@@ -108,6 +108,8 @@ export default function Index({ auth, customers, queryParams = null, success }) 
                                             <th className="px-3 py-3">Status</th>
 
 
+
+                                            <th className="px-3 py-3">Balance</th>
                                             <TableHeading
                                                 name="createdAt"
                                                 sort={queryParams.sort}
@@ -116,8 +118,6 @@ export default function Index({ auth, customers, queryParams = null, success }) 
                                             >
                                                 Created Date
                                             </TableHeading>
-
-                                            <th className="px-3 py-3">Balance</th>
 
                                             <th className="px-3 py-3"></th>
 

@@ -10,6 +10,7 @@ use function Pest\Laravel\get;
 use Inertia\Testing\AssertableInertia;
 
 beforeEach(function () {
+     Customer::factory(10)->create();
     Role::create(['name' => 'Admin']);
     actingAs(User::factory()->create([
         'name' => 'Test User',
@@ -29,9 +30,7 @@ it('should return the correct component', function () {
    */
 
 it('passes customers to the view', function () {
-    $customers = Customer::factory(10)->create();
-
-    //$posts->load('user');
+    $customers = Customer::paginate(10);
 
     get(route('customers.index'))
         ->assertHasPaginatedResource('customers', CustomerResource::collection($customers->sortBy('id')));

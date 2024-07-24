@@ -30,21 +30,7 @@ class TestingServiceProvider extends ServiceProvider
         AssertableInertia::macro('hasResource', function (string $key, JsonResource $resource) {
             $this->has($key);
             $data = $resource->response()->getData(true);
-
-            dd(
-                [
-                    $this->prop($key),
-                    $data['data']
-                ]
-                );
-
-            dd(
-                [
-                    count($this->prop($key)),
-                    count($data['data'])
-                ]
-                );
-            expect($this->prop($key))->toEqual($data);
+            expect($this->prop($key))->toEqual($data['data']);
             return $this;
         });
 

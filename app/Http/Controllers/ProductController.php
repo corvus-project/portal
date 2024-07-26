@@ -32,7 +32,7 @@ class ProductController extends Controller
     public function index(ProductFilter $filter)
     {
         return inertia("Products/Index", [
-            "products" => ProductResource::collection(Product::filter($filter)->paginate(10)),
+            "products" => ProductResource::collection(Product::filter($filter)->paginate(10)->withQueryString()),
             'queryParams' => request()->query() ?: null,
             'success' => session('success'),
         ]);

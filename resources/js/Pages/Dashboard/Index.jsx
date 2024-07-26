@@ -8,7 +8,7 @@ import TableHeading from "@/Components/TableHeading";
 
 export default function Index({ auth, users, customers, queryParams = null, success }) {
     queryParams = queryParams || {};
-
+ 
     const searchFieldChanged = (name, value) => {
 
         if (value) {

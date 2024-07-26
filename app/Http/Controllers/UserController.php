@@ -21,7 +21,7 @@ class UserController extends Controller
     public function index(UserFilter $filter)
     {
         return inertia("Users/Index", [
-            "users" => UserResource::collection(User::with('customer', 'roles')->filter($filter)->paginate(10)),
+            "users" => UserResource::collection(User::with('customer', 'roles')->filter($filter)->paginate(10)->withQueryString()),
             'customers' => Customer::select('name', 'id')->get(),
             'queryParams' => request()->query() ?: null,
             'success' => session('success')

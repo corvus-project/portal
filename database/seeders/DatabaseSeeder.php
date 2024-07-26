@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
         Role::create(['name' => 'Admin']);
         Role::create(['name' => 'Manager']);
         Role::create(['name' => 'User']);
+        Role::create(['name' => 'New']);
 
         $roles = Role::all()->where('name', '!=', 'Admin')->pluck('name');
 

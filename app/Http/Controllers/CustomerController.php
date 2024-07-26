@@ -30,7 +30,7 @@ class CustomerController extends Controller
     public function users(UserFilter $filter)
     {
         return inertia("Customers/Users", [
-            "users" => UserResource::collection(User::with('customer', 'roles')->where('customer_id', Auth::user()->customer_id)->filter($filter)->paginate(10)),
+            "users" => UserResource::collection(User::with('customer', 'roles')->where('customer_id', Auth::user()->customer_id)->filter($filter)->paginate(10)->withQueryString()),
             'customers' => Customer::select('name', 'id')->get(),
             'queryParams' => request()->query() ?: null,
             'success' => session('success'),

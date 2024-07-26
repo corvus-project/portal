@@ -7,8 +7,7 @@ import { Link } from '@inertiajs/react';
 
 export default function Authenticated({ user, roles, header, children }) {
 
-
-console.log(roles)
+ 
 
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 

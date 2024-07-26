@@ -20,7 +20,7 @@ class DashboardController extends Controller
 
         if ($user->hasRole('Admin')) {
             return inertia("Dashboard/Index", [
-                "users" => UserResource::collection(User::with('customer', 'roles')->where('customer_id', 0)->filter($filter)->paginate(10)),
+                "users" => UserResource::collection(User::with('customer', 'roles')->role('New')->filter($filter)->paginate(10)->withQueryString()),
                 'customers' => Customer::select('name', 'id')->get(),
                 'queryParams' => request()->query() ?: null,
                 'success' => session('success')
